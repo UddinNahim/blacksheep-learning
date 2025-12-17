@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:18.1
+    container_name: blacksheepDB
+    restart: always
+    environment:
+      POSTGRES_USER: nahim
+      POSTGRES_PASSWORD: nahim
+      POSTGRES_DB: blacksheepDB
+    ports:
+      - "5435:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql
+
+volumes:
+  pgdata:
